@@ -3,8 +3,6 @@ services:
 
 before_install:
   - git clone https://github.com/ffmpegwasm/FFmpeg.git
-  - git submodule init
-  - git submodule update --recursive
   
 script:
   - cd FFmpeg
