@@ -11,3 +11,8 @@ script:
   - git submodule init
   - git submodule update --recursive
   - bash build-with-docker.sh
+  
+addons:
+  artifacts:
+    paths:
+      - FFmpeg/build
