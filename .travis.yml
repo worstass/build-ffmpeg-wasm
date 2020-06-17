@@ -5,7 +5,8 @@ services:
 
 before_install:
   - git clone https://github.com/ffmpegwasm/FFmpeg.git
-  - cp mybuild.sh FFmpeg/
+  - /bin/cp -f build-js.sh FFmpeg/
+  - chmod +x FFmpeg/build-js.sh
   
 script:
   - cd FFmpeg
