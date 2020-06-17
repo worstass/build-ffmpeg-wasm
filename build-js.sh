@@ -86,7 +86,7 @@ configure_ffmpeg() {
     --disable-ffmpeg \
     --ignore-tests=$(cat all-tests) \
     --prefix=$BUILD_DIR \
-    --extra-cflags="-I$BUILD_DIR/include" \
+    --extra-cflags="-I$BUILD_DIR/include -s WASM=1" \
     --extra-cxxflags="-I$BUILD_DIR/include" \
     --extra-ldflags="-L$BUILD_DIR/lib" \
     --nm="llvm-nm -g" \
@@ -133,8 +133,8 @@ main() {
   build_libmp3lame
   configure_ffmpeg
   make_ffmpeg
-  build_ffmpegjs 1 dist/ffmpeg-core.js
-  build_ffmpegjs 0 dist-wasm/ffmpeg-core.js
+  #build_ffmpegjs 1 dist/ffmpeg-core.js
+  #build_ffmpegjs 0 dist-wasm/ffmpeg-core.js
 }
 
 main "$@"
