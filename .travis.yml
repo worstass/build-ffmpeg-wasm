@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - git clone https://github.com/ffmpegwasm/FFmpeg.git
+  - git clone --branch=n4.1.4-js https://github.com/ffmpegwasm/FFmpeg.git
   - /bin/cp -f build-js.sh FFmpeg/
   - chmod +x FFmpeg/build-js.sh
   
@@ -14,7 +14,7 @@ script:
   - git submodule update --recursive
   - bash build-with-docker.sh
   
-addons:
-  artifacts:
-    paths:
-      - FFmpeg/build
+after_script:
+  - cd FFmpeg
+  - wget http://gosspublic.alicdn.com/ossutil/1.6.14/ossutil64                           
+  - chmod 755 ossutil64
