@@ -16,5 +16,6 @@ script:
   
 after_script:
   - cd FFmpeg
+  - tar -czvf build.tar.gz build/
   - wget http://gosspublic.alicdn.com/ossutil/1.6.14/ossutil64                           
   - chmod 755 ossutil64
