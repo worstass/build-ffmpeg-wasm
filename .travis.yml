@@ -19,4 +19,4 @@ after_script:
   - tar -czvf build.tar.gz build/
   - wget http://gosspublic.alicdn.com/ossutil/1.6.14/ossutil64                           
   - chmod 755 ./ossutil64
-  - ./ossutil64 -i ${AliyunAccessKey} -k ${AliyunAccessSecret} -e oss-cn-hangzhou.aliyuncs.com cp build.tar.gz oss://gamelets/pub/   
+  - ./ossutil64 -i ${AliyunAccessKey} -k ${AliyunAccessSecret} -e oss-cn-hangzhou.aliyuncs.com -f cp build.tar.gz oss://gamelets/pub/   
