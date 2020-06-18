@@ -101,8 +101,8 @@ configure_ffmpeg() {
 
 make_ffmpeg() {
   emmake make clean
-  emmake make -j${NPROC}
-  emcc -Oz libavcodec/libavcodec.a libavformat/libavformat.a -o ${BUILD_DIR}/libffmpeg.js
+  emmake make install -j${NPROC}
+  emcc ${BUILD_DIR}/libavcodec.a ${BUILD_DIR}/libavformat.a -o ${BUILD_DIR}/libffmpeg.js
 }
 
 build_ffmpegjs() {
